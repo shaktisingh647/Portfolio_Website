@@ -90,8 +90,7 @@ const WhatIDo = () => {
               <h3>DEVELOP</h3>
               <h4>Description</h4>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas
-                quia aliquid laboriosam ducimus sit molestiae.
+              I specialize in designing and developing dynamic web applications that are responsive, scalable, and efficient. My goal is to turn ideas into reality with clean and functional code
               </p>
               <h5>Skillset & tools</h5>
               <div className="what-content-flex">
@@ -128,11 +127,10 @@ const WhatIDo = () => {
             </div>
             <div className="what-corner"></div>
             <div className="what-content-in">
-              <h3>DESIGN</h3>
+              <h3>CORE SERVICES</h3>
               <h4>Description</h4>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas
-                quia aliquid laboriosam ducimus sit molestiae
+              I design and implement RESTful APIs that facilitate seamless communication between the frontend and backend, ensuring fast and reliable performance. My expertise lies in building robust authentication systems, data validation processes, and database management solutions using MongoDB
               </p>
               <h5>Skillset & tools</h5>
               <div className="what-content-flex">

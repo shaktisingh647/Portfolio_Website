@@ -5,8 +5,8 @@ const Career = () => {
     <div className="career-section section-container">
       <div className="career-container">
         <h2>
-          My career <span>&</span>
-          <br /> experience
+          My career 
+          
         </h2>
         <div className="career-info">
           <div className="career-timeline">
@@ -15,43 +15,37 @@ const Career = () => {
           <div className="career-info-box">
             <div className="career-info-in">
               <div className="career-role">
-                <h4>Position In Company</h4>
-                <h5>Company Name</h5>
+                <h4>12th</h4>
+                <h5>City Public School</h5>
               </div>
-              <h3>20XX</h3>
+              <h3>96%</h3>
             </div>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim
-              labore sit non ipsum temporibus quidem, deserunt eaque officiis
-              mollitia ratione suscipit repellat.
+              Completed my 12th grade with 96% marks in 2022.
             </p>
           </div>
           <div className="career-info-box">
             <div className="career-info-in">
               <div className="career-role">
-                <h4>Position In Company</h4>
-                <h5>Company Name</h5>
+                <h4>10th</h4>
+                <h5>City Public School</h5>
               </div>
-              <h3>20XX</h3>
+              <h3>75%</h3>
             </div>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim
-              labore sit non ipsum temporibus quidem, deserunt eaque officiis
-              mollitia ratione suscipit repellat.
+              Completed my 10th grade in 2020 with 75% marks.
             </p>
           </div>
           <div className="career-info-box">
             <div className="career-info-in">
               <div className="career-role">
-                <h4>Position In Company</h4>
-                <h5>Company Name</h5>
+                <h4>Bachelors Of Computers Application</h4>
+                <h5>Gl Bajaj Institute of Technology And Management</h5>
               </div>
-              <h3>NOW</h3>
+              <h3>8CGPA</h3>
             </div>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim
-              labore sit non ipsum temporibus quidem, deserunt eaque officiis
-              mollitia ratione suscipit repellat.
+              Bachelors Of Computers Application from GL Bajaj Institute of Technology And Management.
             </p>
           </div>
         </div>
