@@ -9,7 +9,8 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      "gsap-trial/ScrollSmoother": "/node_modules/gsap-trial/ScrollSmoother.js",
+      // Remove this line
+      // "gsap-trial/ScrollSmoother": "/node_modules/gsap-trial/ScrollSmoother.js",
     },
   },
   build: {
@@ -18,7 +19,6 @@ export default defineConfig({
     },
   },
   preview: {
-    allowedHosts: ["portfolio-website-2-wock.onrender.com"], // Allow preview on Render
+    allowedHosts: ["portfolio-website-2-wock.onrender.com", "portfolio-website-3-sdci.onrender.com"], // Allow preview on Render
   },
 });
-
