@@ -1,54 +1,67 @@
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
+import anime from "animejs";
 import "./styles/Cursor.css";
-import gsap from "gsap";
 
 const Cursor = () => {
-  const cursorRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
-    let hover = false;
-    const cursor = cursorRef.current!;
-    const mousePos = { x: 0, y: 0 };
-    const cursorPos = { x: 0, y: 0 };
+    const cursor = document.querySelector(".cursor");
+    const cursorInner = document.querySelector(".cursor-inner");
+    const cursorOuter = document.querySelector(".cursor-outer");
+
     document.addEventListener("mousemove", (e) => {
-      mousePos.x = e.clientX;
-      mousePos.y = e.clientY;
-    });
-    requestAnimationFrame(function loop() {
-      if (!hover) {
-        const delay = 6;
-        cursorPos.x += (mousePos.x - cursorPos.x) / delay;
-        cursorPos.y += (mousePos.y - cursorPos.y) / delay;
-        gsap.to(cursor, { x: cursorPos.x, y: cursorPos.y, duration: 0.1 });
-        // cursor.style.transform = `translate(${cursorPos.x}px, ${cursorPos.y}px)`;
-      }
-      requestAnimationFrame(loop);
-    });
-    document.querySelectorAll("[data-cursor]").forEach((item) => {
-      const element = item as HTMLElement;
-      element.addEventListener("mouseover", (e: MouseEvent) => {
-        const target = e.currentTarget as HTMLElement;
-        const rect = target.getBoundingClientRect();
-
-        if (element.dataset.cursor === "icons") {
-          cursor.classList.add("cursor-icons");
-
-          gsap.to(cursor, { x: rect.left, y: rect.top, duration: 0.1 });
-          //   cursor.style.transform = `translate(${rect.left}px,${rect.top}px)`;
-          cursor.style.setProperty("--cursorH", `${rect.height}px`);
-          hover = true;
-        }
-        if (element.dataset.cursor === "disable") {
-          cursor.classList.add("cursor-disable");
-        }
+      anime({
+        targets: cursor,
+        translateX: e.clientX,
+        translateY: e.clientY,
+        duration: 100,
+        easing: "easeOutQuad",
       });
-      element.addEventListener("mouseout", () => {
-        cursor.classList.remove("cursor-disable", "cursor-icons");
-        hover = false;
+    });
+
+    document.addEventListener("mousemove", (e) => {
+      anime({
+        targets: cursorInner,
+        translateX: e.clientX,
+        translateY: e.clientY,
+        duration: 100,
+        easing: "easeOutQuad",
+      });
+      anime({
+        targets: cursorOuter,
+        translateX: e.clientX,
+        translateY: e.clientY,
+        duration: 200,
+        easing: "easeOutQuad",
+      });
+    });
+
+    document.addEventListener("mousedown", () => {
+      anime({
+        targets: cursorInner,
+        scale: 0.8,
+        duration: 100,
+        easing: "easeOutQuad",
+      });
+    });
+
+    document.addEventListener("mouseup", () => {
+      anime({
+        targets: cursorInner,
+        scale: 1,
+        duration: 100,
+        easing: "easeOutQuad",
       });
     });
   }, []);
 
-  return <div className="cursor-main" ref={cursorRef}></div>;
+  return (
+    <>
+      <div className="cursor">
+        <div className="cursor-inner"></div>
+        <div className="cursor-outer"></div>
+      </div>
+    </>
+  );
 };
 
 export default Cursor;
