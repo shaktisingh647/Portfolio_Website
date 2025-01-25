@@ -13,5 +13,8 @@ export default defineConfig({
     rollupOptions: {
       external: ['gsap-trial/ScrollSmoother']
     }
+  },
+  preview: {
+    allowedHosts: ['portfolio-website-2-wock.onrender.com']
   }
 });
